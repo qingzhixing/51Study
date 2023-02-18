@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/19/2023  01:22:51  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/19/2023  01:25:00  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -29,9 +29,10 @@ LINK MAP OF MODULE:  .\Objects\light_loop (MAIN)
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
             CODE    0003H     0032H     UNIT         ?PR?MAIN?MAIN
-            CODE    0035H     0021H     UNIT         ?PR?_SLEEP?MAIN
-            CODE    0056H     0020H     UNIT         ?C?LIB_CODE
-            CODE    0076H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0035H     0023H     UNIT         ?PR?_SLEEP?MAIN
+            CODE    0058H     0020H     UNIT         ?C?LIB_CODE
+            CODE    0078H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0084H     0009H     UNIT         ?PR?DELAY1MS?MAIN
 
 
 
@@ -48,6 +49,7 @@ SEGMENT                          DATA_GROUP
   +--> ?PR?_SLEEP?MAIN
 
 ?PR?_SLEEP?MAIN                0008H    0004H
+  +--> ?PR?DELAY1MS?MAIN
 
 
 
@@ -57,53 +59,71 @@ SYMBOL TABLE OF MODULE:  .\Objects\light_loop (MAIN)
   ----------------------------------
 
   -------         MODULE        MAIN
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/19/2023  01:25:00  PAGE 2
+
+
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00A0H         PUBLIC        P2
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/19/2023  01:22:51  PAGE 2
-
-
+  C:0084H         PUBLIC        Delay1ms
   C:0003H         PUBLIC        main
   C:003DH         PUBLIC        _Sleep
   -------         PROC          MAIN
-  C:0003H         LINE#         7
   C:0003H         LINE#         8
   C:0003H         LINE#         9
-  C:0006H         LINE#         10
-  C:0009H         LINE#         11
-  C:000CH         LINE#         12
-  C:000FH         LINE#         13
-  C:0012H         LINE#         14
-  C:0015H         LINE#         15
-  C:0018H         LINE#         16
-  C:001BH         LINE#         17
-  C:001EH         LINE#         18
-  C:0021H         LINE#         19
-  C:0024H         LINE#         20
-  C:0027H         LINE#         21
-  C:002AH         LINE#         22
-  C:002DH         LINE#         23
-  C:0030H         LINE#         24
-  C:0033H         LINE#         25
+  C:0003H         LINE#         10
+  C:0006H         LINE#         11
+  C:0009H         LINE#         12
+  C:000CH         LINE#         13
+  C:000FH         LINE#         14
+  C:0012H         LINE#         15
+  C:0015H         LINE#         16
+  C:0018H         LINE#         17
+  C:001BH         LINE#         18
+  C:001EH         LINE#         19
+  C:0021H         LINE#         20
+  C:0024H         LINE#         21
+  C:0027H         LINE#         22
+  C:002AH         LINE#         23
+  C:002DH         LINE#         24
+  C:0030H         LINE#         25
+  C:0033H         LINE#         26
   -------         ENDPROC       MAIN
-  C:0035H         SYMBOL        L?0008
-  -------         PROC          L?0007
-  -------         ENDPROC       L?0007
-  C:0035H         SYMBOL        L?0008
+  C:0035H         SYMBOL        L?0014
+  -------         PROC          L?0013
+  -------         ENDPROC       L?0013
+  C:0035H         SYMBOL        L?0014
   -------         PROC          _SLEEP
   D:0008H         SYMBOL        sleepTime
-  C:003DH         LINE#         28
-  C:0045H         LINE#         29
-  C:0052H         LINE#         30
-  C:0053H         LINE#         31
+  C:003DH         LINE#         29
+  C:0045H         LINE#         30
+  C:0052H         LINE#         31
   C:0055H         LINE#         32
+  C:0057H         LINE#         33
   -------         ENDPROC       _SLEEP
+  -------         PROC          DELAY1MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0084H         LINE#         34
+  C:0084H         LINE#         35
+  C:0084H         LINE#         38
+  C:0086H         LINE#         39
+  C:0088H         LINE#         41
+  C:0088H         LINE#         42
+  C:008AH         LINE#         43
+  C:008CH         LINE#         44
+  -------         ENDPROC       DELAY1MS
   -------         ENDMOD        MAIN
 
   -------         MODULE        ?C?LLDIIDATA
-  C:005FH         PUBLIC        ?C?LLDIIDATA
-  C:0056H         PUBLIC        ?C?LLDIIDATA1
-  C:0058H         PUBLIC        ?C?LLDIIDATA8
+  C:0061H         PUBLIC        ?C?LLDIIDATA
+  C:0058H         PUBLIC        ?C?LLDIIDATA1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/19/2023  01:25:00  PAGE 3
+
+
+  C:005AH         PUBLIC        ?C?LLDIIDATA8
   -------         ENDMOD        ?C?LLDIIDATA
 
-Program Size: data=13.0 xdata=0 code=130
+Program Size: data=13.0 xdata=0 code=141
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
