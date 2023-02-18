@@ -2,7 +2,8 @@
 #include <INTRINS.H>
 
 void Sleep(unsigned long int);
-#define Delay() Sleep(200)
+void Delay1ms();
+#define Delay() Sleep(100)
 
 void main(void){
 	while(1){
@@ -27,6 +28,17 @@ void main(void){
 
 void Sleep(unsigned long int sleepTime){
 	while(sleepTime--){
-		_nop_();
+		Delay1ms();
 	}
+}
+void Delay1ms()		//@12.000MHz
+{
+	unsigned char i, j;
+
+	i = 2;
+	j = 239;
+	do
+	{
+		while (--j);
+	} while (--i);
 }
