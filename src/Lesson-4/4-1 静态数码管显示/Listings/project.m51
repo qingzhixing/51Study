@@ -1,0 +1,106 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    07/19/2023  03:57:47  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\PROGRAM FILES\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZE
+>>  (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?_SLEEP?MAIN
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0017H     UNIT         ?PR?_SLEEP?MAIN
+            CODE    001AH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0026H     000BH     UNIT         ?PR?MAIN?MAIN
+            CODE    0031H     0009H     UNIT         ?PR?DELAY1MS?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:0031H         PUBLIC        Delay1ms
+  B:00A0H.2       PUBLIC        P2_2
+  B:00A0H.3       PUBLIC        P2_3
+  B:00A0H.4       PUBLIC        P2_4
+  C:0026H         PUBLIC        main
+  C:0003H         PUBLIC        _Sleep
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  07/19/2023  03:57:47  PAGE 2
+
+
+  -------         PROC          _SLEEP
+  D:0008H         SYMBOL        sleepTime
+  C:0003H         LINE#         12
+  C:0007H         LINE#         13
+  C:0007H         LINE#         14
+  C:0014H         LINE#         15
+  C:0014H         LINE#         16
+  C:0017H         LINE#         17
+  C:0019H         LINE#         18
+  -------         ENDPROC       _SLEEP
+  -------         PROC          DELAY1MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0031H         LINE#         19
+  C:0031H         LINE#         20
+  C:0031H         LINE#         23
+  C:0033H         LINE#         24
+  C:0035H         LINE#         26
+  C:0035H         LINE#         27
+  C:0037H         LINE#         29
+  C:0039H         LINE#         30
+  -------         ENDPROC       DELAY1MS
+  -------         PROC          MAIN
+  C:0026H         LINE#         4
+  C:0026H         LINE#         5
+  C:0026H         LINE#         6
+  C:0028H         LINE#         7
+  C:002AH         LINE#         8
+  C:002CH         LINE#         9
+  C:002FH         LINE#         10
+  C:002FH         LINE#         11
+  C:002FH         LINE#         13
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SLEEP?MAIN
+
+Program Size: data=11.0 xdata=0 code=58
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
