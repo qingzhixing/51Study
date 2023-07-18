@@ -1,0 +1,158 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    07/19/2023  04:51:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\PROGRAM FILES\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZE
+>>  (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     002BH     UNIT         ?DT?MAIN
+            DATA    0033H     0002H     UNIT         ?DT?_SLEEP?MAIN
+            IDATA   0035H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0030H     UNIT         ?C_INITSEG
+            CODE    00BFH     0023H     UNIT         ?PR?_NIXIETUBEALPHADISPLAY?MAIN
+            CODE    00E2H     0021H     UNIT         ?PR?_NIXIETUBENUMBERDISPLAY?MAIN
+            CODE    0103H     001EH     UNIT         ?PR?MAIN?MAIN
+            CODE    0121H     0017H     UNIT         ?PR?_SLEEP?MAIN
+            CODE    0138H     0009H     UNIT         ?PR?DELAY1MS?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?_NIXIETUBENUMBERDISPLAY?MAIN
+  +--> ?PR?_NIXIETUBEALPHADISPLAY?MAIN
+
+?PR?_NIXIETUBENUMBERDISPLAY?MAIN
+  +--> ?PR?DELAY1MS?MAIN
+
+?PR?_NIXIETUBEALPHADISPLAY?MAIN
+  +--> ?PR?DELAY1MS?MAIN
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  07/19/2023  04:51:27  PAGE 2
+
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:0138H         PUBLIC        Delay1ms
+  B:00A0H.2       PUBLIC        P2_2
+  B:00A0H.3       PUBLIC        P2_3
+  B:00A0H.4       PUBLIC        P2_4
+  C:0103H         PUBLIC        main
+  C:00BFH         PUBLIC        _NixieTubeAlphaDisplay
+  C:00E2H         PUBLIC        _NixieTubeNumberDisplay
+  D:0008H         SYMBOL        alphaToNixieSign
+  D:0022H         SYMBOL        numberToNixieSign
+  C:0121H         PUBLIC        _Sleep
+  -------         PROC          _SLEEP
+  D:0033H         SYMBOL        msTime
+  C:0121H         LINE#         11
+  C:0125H         LINE#         12
+  C:0125H         LINE#         13
+  C:0132H         LINE#         14
+  C:0132H         LINE#         15
+  C:0135H         LINE#         16
+  C:0137H         LINE#         17
+  -------         ENDPROC       _SLEEP
+  -------         PROC          DELAY1MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0138H         LINE#         18
+  C:0138H         LINE#         19
+  C:0138H         LINE#         22
+  C:013AH         LINE#         23
+  C:013CH         LINE#         25
+  C:013CH         LINE#         26
+  C:013EH         LINE#         28
+  C:0140H         LINE#         29
+  -------         ENDPROC       DELAY1MS
+  -------         PROC          _NIXIETUBENUMBERDISPLAY
+  D:0003H         SYMBOL        location
+  D:0005H         SYMBOL        number
+  C:00E2H         LINE#         37
+  C:00E4H         LINE#         38
+  C:00E4H         LINE#         40
+  C:00E7H         LINE#         41
+  C:00EAH         LINE#         44
+  C:00EFH         LINE#         46
+  C:00F2H         LINE#         47
+  C:00F7H         LINE#         48
+  C:00FBH         LINE#         50
+  C:0102H         LINE#         51
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  07/19/2023  04:51:27  PAGE 3
+
+
+  -------         ENDPROC       _NIXIETUBENUMBERDISPLAY
+  -------         PROC          _NIXIETUBEALPHADISPLAY
+  D:0003H         SYMBOL        location
+  D:0005H         SYMBOL        alpha
+  C:00BFH         LINE#         61
+  C:00C1H         LINE#         62
+  C:00C1H         LINE#         64
+  C:00C4H         LINE#         65
+  C:00C7H         LINE#         68
+  C:00CCH         LINE#         70
+  C:00CFH         LINE#         71
+  C:00D4H         LINE#         72
+  C:00D8H         LINE#         75
+  C:00DBH         LINE#         77
+  C:00E1H         LINE#         78
+  -------         ENDPROC       _NIXIETUBEALPHADISPLAY
+  -------         PROC          MAIN
+  C:0103H         LINE#         4
+  C:0103H         LINE#         5
+  C:0103H         LINE#         6
+  C:0103H         LINE#         7
+  C:0103H         LINE#         8
+  C:010AH         LINE#         9
+  C:0111H         LINE#         10
+  C:0118H         LINE#         11
+  C:011FH         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SLEEP?MAIN
+
+Program Size: data=54.0 xdata=0 code=321
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
