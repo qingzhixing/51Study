@@ -1,0 +1,121 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    07/19/2023  01:36:34  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\PROGRAM FILES\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZE
+>>  (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0035H     UNIT         ?PR?MAIN?MAIN
+            CODE    0038H     0017H     UNIT         ?PR?_SLEEP?MAIN
+            CODE    004FH     000CH     UNIT         ?C_C51STARTUP
+            CODE    005BH     0009H     UNIT         ?PR?DELAY1MS?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0001H
+  +--> ?PR?_SLEEP?MAIN
+
+?PR?_SLEEP?MAIN                0009H    0002H
+  +--> ?PR?DELAY1MS?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  07/19/2023  01:36:34  PAGE 2
+
+
+  C:005BH         PUBLIC        Delay1ms
+  B:00B0H.1       PUBLIC        P3_1
+  C:0003H         PUBLIC        main
+  C:0038H         PUBLIC        _Sleep
+  -------         PROC          _SLEEP
+  D:0009H         SYMBOL        sleepTime
+  C:0038H         LINE#         10
+  C:003CH         LINE#         11
+  C:003CH         LINE#         12
+  C:0049H         LINE#         13
+  C:0049H         LINE#         14
+  C:004CH         LINE#         15
+  C:004EH         LINE#         16
+  -------         ENDPROC       _SLEEP
+  -------         PROC          DELAY1MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:005BH         LINE#         17
+  C:005BH         LINE#         18
+  C:005BH         LINE#         21
+  C:005DH         LINE#         22
+  C:005FH         LINE#         24
+  C:005FH         LINE#         25
+  C:0061H         LINE#         27
+  C:0063H         LINE#         28
+  -------         ENDPROC       DELAY1MS
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        LEDOnLightId
+  -------         ENDDO         
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0006H         LINE#         7
+  C:0006H         LINE#         8
+  C:0006H         LINE#         9
+  C:0009H         LINE#         10
+  C:0009H         LINE#         11
+  C:0010H         LINE#         12
+  C:0013H         LINE#         13
+  C:0013H         LINE#         14
+  C:0013H         LINE#         15
+  C:001AH         LINE#         17
+  C:001CH         LINE#         18
+  C:0023H         LINE#         19
+  C:0023H         LINE#         20
+  C:0026H         LINE#         21
+  C:0026H         LINE#         22
+  C:0036H         LINE#         23
+  C:0036H         LINE#         24
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=12.0 xdata=0 code=100
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

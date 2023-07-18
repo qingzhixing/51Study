@@ -391,6 +391,11 @@
               <FileType>5</FileType>
               <FilePath>.\utilities.h</FilePath>
             </File>
+            <File>
+              <FileName>stdint.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\stdint.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
