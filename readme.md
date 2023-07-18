@@ -8,3 +8,7 @@
 - 开发板:普中51单片机学习板A2套件
 - 使用软件:Keil uVision5.
 - 有意向转用vscode+PlatformIO,还未学习.
+
+## 开发板图片
+
+![开发板图片](./static/images/开发板图片.jpg)
