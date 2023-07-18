@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/19/2023  12:39:17  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/19/2023  12:48:58  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -28,13 +28,13 @@ LINK MAP OF MODULE:  .\Objects\Project (MAIN)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0035H     UNIT         ?PR?MAIN?MAIN
-            CODE    0038H     0031H     UNIT         ?PR?_CHECKBUTTONWITHOUTDEBOUNCING?MAIN
-            CODE    0069H     0021H     UNIT         ?PR?_CHECKBUTTON?MAIN
-            CODE    008AH     0020H     UNIT         ?C?LIB_CODE
-            CODE    00AAH     001BH     UNIT         ?PR?_SLEEP?MAIN
-            CODE    00C5H     000CH     UNIT         ?C_C51STARTUP
-            CODE    00D1H     0009H     UNIT         ?PR?DELAY1MS?MAIN
+            CODE    0003H     003CH     UNIT         ?PR?MAIN?MAIN
+            CODE    003FH     0031H     UNIT         ?PR?_CHECKBUTTONWITHOUTDEBOUNCING?MAIN
+            CODE    0070H     0021H     UNIT         ?PR?_CHECKBUTTON?MAIN
+            CODE    0091H     0020H     UNIT         ?C?LIB_CODE
+            CODE    00B1H     001BH     UNIT         ?PR?_SLEEP?MAIN
+            CODE    00CCH     000CH     UNIT         ?C_C51STARTUP
+            CODE    00D8H     0009H     UNIT         ?PR?DELAY1MS?MAIN
 
 
 
@@ -48,6 +48,7 @@ SEGMENT                                          DATA_GROUP
   +--> ?PR?MAIN?MAIN
 
 ?PR?MAIN?MAIN                                  -----    -----
+  +--> ?PR?_CHECKBUTTONWITHOUTDEBOUNCING?MAIN
   +--> ?PR?_CHECKBUTTON?MAIN
 
 ?PR?_CHECKBUTTON?MAIN                          0008H    0002H
@@ -58,8 +59,8 @@ SEGMENT                                          DATA_GROUP
   +--> ?PR?DELAY1MS?MAIN
 
 
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/19/2023  12:48:58  PAGE 2
 
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/19/2023  12:39:17  PAGE 2
 
 
 SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
@@ -69,7 +70,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:00D1H         PUBLIC        Delay1ms
+  C:00D8H         PUBLIC        Delay1ms
   B:00A0H.0       PUBLIC        P2_0
   B:00B0H.0       PUBLIC        P3_0
   B:00A0H.1       PUBLIC        P2_1
@@ -79,57 +80,57 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
   B:00A0H.3       PUBLIC        P2_3
   B:00B0H.3       PUBLIC        P3_3
   C:0003H         PUBLIC        main
-  C:0069H         PUBLIC        _CheckButton
-  C:0038H         PUBLIC        _CheckButtonWithoutDebouncing
-  C:00AAH         PUBLIC        _Sleep
+  C:0070H         PUBLIC        _CheckButton
+  C:003FH         PUBLIC        _CheckButtonWithoutDebouncing
+  C:00B1H         PUBLIC        _Sleep
   -------         PROC          _SLEEP
   D:000AH         SYMBOL        sleepTime
-  C:00AAH         LINE#         15
-  C:00B2H         LINE#         16
-  C:00BFH         LINE#         17
-  C:00C2H         LINE#         18
-  C:00C4H         LINE#         19
+  C:00B1H         LINE#         15
+  C:00B9H         LINE#         16
+  C:00C6H         LINE#         17
+  C:00C9H         LINE#         18
+  C:00CBH         LINE#         19
   -------         ENDPROC       _SLEEP
   -------         PROC          DELAY1MS
   -------         DO            
   D:0007H         SYMBOL        i
   D:0006H         SYMBOL        j
   -------         ENDDO         
-  C:00D1H         LINE#         20
-  C:00D1H         LINE#         21
-  C:00D1H         LINE#         24
-  C:00D3H         LINE#         25
-  C:00D5H         LINE#         27
-  C:00D5H         LINE#         28
-  C:00D7H         LINE#         29
-  C:00D9H         LINE#         30
+  C:00D8H         LINE#         20
+  C:00D8H         LINE#         21
+  C:00D8H         LINE#         24
+  C:00DAH         LINE#         25
+  C:00DCH         LINE#         27
+  C:00DCH         LINE#         28
+  C:00DEH         LINE#         29
+  C:00E0H         LINE#         30
   -------         ENDPROC       DELAY1MS
   -------         PROC          _CHECKBUTTONWITHOUTDEBOUNCING
   D:0006H         SYMBOL        bottonID
-  C:0038H         LINE#         32
-  C:0038H         LINE#         33
-  C:003DH         LINE#         34
-  C:0040H         LINE#         35
-  C:0045H         LINE#         36
-  C:004BH         LINE#         37
-  C:004FH         LINE#         38
-  C:0055H         LINE#         39
-  C:0059H         LINE#         40
-  C:005FH         LINE#         41
-  C:0065H         LINE#         42
-  C:0068H         LINE#         43
+  C:003FH         LINE#         32
+  C:003FH         LINE#         33
+  C:0044H         LINE#         34
+  C:0047H         LINE#         35
+  C:004CH         LINE#         36
+  C:0052H         LINE#         37
+  C:0056H         LINE#         38
+  C:005CH         LINE#         39
+  C:0060H         LINE#         40
+  C:0066H         LINE#         41
+  C:006CH         LINE#         42
+  C:006FH         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/19/2023  12:48:58  PAGE 3
+
+
   -------         ENDPROC       _CHECKBUTTONWITHOUTDEBOUNCING
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/19/2023  12:39:17  PAGE 3
-
-
   -------         PROC          _CHECKBUTTON
   D:0008H         SYMBOL        bottonID
-  C:0069H         LINE#         45
-  C:006DH         LINE#         46
-  C:0074H         LINE#         47
-  C:0077H         LINE#         48
-  C:0082H         LINE#         49
-  C:0089H         LINE#         50
+  C:0070H         LINE#         45
+  C:0074H         LINE#         46
+  C:007BH         LINE#         47
+  C:007EH         LINE#         48
+  C:0089H         LINE#         49
+  C:0090H         LINE#         50
   -------         ENDPROC       _CHECKBUTTON
   -------         PROC          MAIN
   C:0003H         LINE#         3
@@ -137,18 +138,18 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
   C:0003H         LINE#         5
   C:0003H         LINE#         6
   C:0003H         LINE#         7
-  C:000FH         LINE#         8
-  C:001CH         LINE#         9
-  C:0029H         LINE#         10
-  C:0036H         LINE#         11
+  C:0016H         LINE#         8
+  C:0023H         LINE#         9
+  C:0030H         LINE#         10
+  C:003DH         LINE#         11
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
   -------         MODULE        ?C?LLDIIDATA
-  C:0093H         PUBLIC        ?C?LLDIIDATA
-  C:008AH         PUBLIC        ?C?LLDIIDATA1
-  C:008CH         PUBLIC        ?C?LLDIIDATA8
+  C:009AH         PUBLIC        ?C?LLDIIDATA
+  C:0091H         PUBLIC        ?C?LLDIIDATA1
+  C:0093H         PUBLIC        ?C?LLDIIDATA8
   -------         ENDMOD        ?C?LLDIIDATA
 
-Program Size: data=15.0 xdata=0 code=218
+Program Size: data=15.0 xdata=0 code=225
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
