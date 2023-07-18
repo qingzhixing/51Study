@@ -7,9 +7,9 @@ void Delay1ms();
 void Sleep(uint32_t);
 void NixieTubeDisplay(uint8_t, uint8_t);
 
-void Sleep(uint32_t sleepTime)
+void Sleep(uint32_t msTime)
 {
-    while (sleepTime--)
+    while (msTime--)
     {
         Delay1ms();
     }
@@ -27,6 +27,10 @@ void Delay1ms() //@12.000MHz
     } while (--i);
 }
 
+/*
+    location:从左到右8个LED编号0~7
+    number:0x0~0xF
+*/
 void NixieTubeDisplay(uint8_t location, uint8_t number)
 {
     static uint8_t numberToNixieSign[] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71, 0x00};
