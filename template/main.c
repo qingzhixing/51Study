@@ -1,5 +1,5 @@
-#include "defines.h"
-#include "utilities.h"
+#include "lib/defines.h"
+#include "lib/utilities.h"
 void main()
 {
     while (TRUE)

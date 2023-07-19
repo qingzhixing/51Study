@@ -382,19 +382,34 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>defines.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\defines.h</FilePath>
+              <FileName>utilities.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\utilities.c</FilePath>
             </File>
             <File>
-              <FileName>utilities.h</FileName>
+              <FileName>defines.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\utilities.h</FilePath>
+              <FilePath>.\lib\defines.h</FilePath>
             </File>
             <File>
               <FileName>stdint.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\stdint.h</FilePath>
+              <FilePath>.\lib\stdint.h</FilePath>
+            </File>
+            <File>
+              <FileName>utilities.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\utilities.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD1602.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\LCD1602\LCD1602.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD1602.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\LCD1602\LCD1602.c</FilePath>
             </File>
           </Files>
         </Group>
