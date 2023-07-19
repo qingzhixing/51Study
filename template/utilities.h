@@ -37,8 +37,8 @@ static uint8_t numberToNixieSign[] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 
 void NixieTubeNumberDisplay(uint8_t location, uint8_t number)
 {
     // LED消影
-    P0 = 0x00;
     Delay1ms();
+    P0 = 0x00;
 
     // 反转LED位置，使左边第一个LED从原来的LED8变成LED7
     location = 7 - location;
@@ -61,8 +61,8 @@ static uint8_t alphaToNixieSign[] = {0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71, 0x3d, 0
 void NixieTubeAlphaDisplay(uint8_t location, uint8_t alpha)
 {
     // LED消影
-    P0 = 0x00;
     Delay1ms();
+    P0 = 0x00;
 
     // 反转LED位置，使左边第一个LED从原来的LED8变成LED7
     location = 7 - location;
