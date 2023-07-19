@@ -4,7 +4,7 @@
 void main()
 {
     LCD_Init();
-    LCD_ShowString(2, 3, "114514");
+    LCD_ShowString(2, 4, "sb SEGA");
     while (TRUE)
     {
         // your codes are here
