@@ -411,6 +411,16 @@
               <FileType>5</FileType>
               <FilePath>.\lib\LCD1602.h</FilePath>
             </File>
+            <File>
+              <FileName>matrix_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\matrix_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrix_key.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\matrix_key.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
