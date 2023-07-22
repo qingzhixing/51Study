@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              07/20/2023 21:17:27 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              07/22/2023 16:21:57 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -18,19 +18,20 @@ line level    source
    8   1          int lastButtonDown = 0;
    9   1      
   10   1          LCD_Init();
-  11   1          while (TRUE)
-  12   1          {
-  13   2              LCD_ShowString(2, 6, "Entered");
-  14   2              scanValue = MatrixKey_Scan();
-  15   2              lastButtonDown = scanValue == 0 ? lastButtonDown : scanValue;
-  16   2              LCD_ShowNum(1, 1, lastButtonDown, 2);
-  17   2          }
-  18   1      }
+  11   1          LCD_ShowString(1, 1, "Input Password:");
+  12   1          while (TRUE)
+  13   1          {
+  14   2              LCD_ShowString(2, 6, "Entered");
+  15   2              scanValue = MatrixKey_Scan();
+  16   2              lastButtonDown = scanValue == 0 ? lastButtonDown : scanValue;
+  17   2              LCD_ShowNum(1, 1, lastButtonDown, 2);
+  18   2          }
+  19   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     69    ----
-   CONSTANT SIZE    =      8    ----
+   CODE SIZE        =     82    ----
+   CONSTANT SIZE    =     24    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----       4
