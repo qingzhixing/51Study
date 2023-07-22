@@ -1,5 +1,3 @@
-#ifndef D2DF69C4_51E1_4B2B_A6FF_AA79E8945538
-#define D2DF69C4_51E1_4B2B_A6FF_AA79E8945538
 #ifndef __LCD1602_H__
 #define __LCD1602_H__
 
@@ -13,5 +11,3 @@ void LCD_ShowHexNum(unsigned char Line, unsigned char Column, unsigned int Numbe
 void LCD_ShowBinNum(unsigned char Line, unsigned char Column, unsigned int Number, unsigned char Length);
 
 #endif
-
-#endif /* D2DF69C4_51E1_4B2B_A6FF_AA79E8945538 */
