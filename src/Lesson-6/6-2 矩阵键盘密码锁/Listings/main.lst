@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              07/22/2023 16:21:57 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              07/22/2023 17:25:55 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -12,29 +12,94 @@ line level    source
    2          #include "lib/defines.h"
    3          #include "lib/matrix_key.h"
    4          #include "lib/utilities.h"
-   5          void main()
-   6          {
-   7   1          int scanValue = 0;
-   8   1          int lastButtonDown = 0;
-   9   1      
-  10   1          LCD_Init();
-  11   1          LCD_ShowString(1, 1, "Input Password:");
-  12   1          while (TRUE)
-  13   1          {
-  14   2              LCD_ShowString(2, 6, "Entered");
-  15   2              scanValue = MatrixKey_Scan();
-  16   2              lastButtonDown = scanValue == 0 ? lastButtonDown : scanValue;
-  17   2              LCD_ShowNum(1, 1, lastButtonDown, 2);
-  18   2          }
-  19   1      }
+   5          
+   6          // 这里定义功能按键
+   7          #define BACKSPACE 11
+   8          #define CONFIRM 12
+   9          
+  10          uint8_t scanValue = 0;
+  11          uint8_t inputPassword[6] = {0};
+  12          uint8_t correctPassword[6] = {1, 1, 4, 5, 1, 4};
+  13          int8_t nextInputDigitId = 0;
+  14          
+  15          void ShowInputPassword()
+  16          {
+  17   1          int8_t index = 0;
+  18   1          for (index = 0; index < 6; index++)
+  19   1          {
+  20   2              if (index < nextInputDigitId)
+  21   2              {
+  22   3                  LCD_ShowNum(2, index + 1, inputPassword[index], 1);
+  23   3              }
+  24   2              else
+  25   2              {
+  26   3                  LCD_ShowChar(2, index + 1, ' ');
+  27   3              }
+  28   2          }
+  29   1      }
+  30          
+  31          bool CheckInputPassword()
+  32          {
+  33   1          int8_t i = 0;
+  34   1          // 没输入完成就直接判定错
+  35   1          if (nextInputDigitId < 6)
+  36   1              return false;
+  37   1          for (i = 0; i < 6; i++)
+  38   1          {
+  39   2              if (inputPassword[i] != correctPassword[i])
+  40   2                  return false;
+  41   2          }
+  42   1          return true;
+  43   1      }
+  44          
+  45          void main()
+  46          {
+  47   1          LCD_Init();
+  48   1          LCD_ShowString(1, 1, "Password:");
+  49   1          while (TRUE)
+  50   1          {
+  51   2              scanValue = MatrixKey_Scan();
+  52   2              if (scanValue != 0)
+  53   2              {
+  54   3                  // 1 ~ 10 号按键我们定义为密码区，表示 1~9,0
+C51 COMPILER V9.60.7.0   MAIN                                                              07/22/2023 17:25:55 PAGE 2   
+
+  55   3                  if (scanValue <= 10 && nextInputDigitId < 6)
+  56   3                  {
+  57   4                      inputPassword[nextInputDigitId++] = scanValue % 10;
+  58   4                  }
+  59   3                  else if (scanValue == BACKSPACE && nextInputDigitId > 0)
+  60   3                  {
+  61   4                      inputPassword[nextInputDigitId--] = 0;
+  62   4                  }
+  63   3                  else if (scanValue == CONFIRM)
+  64   3                  {
+  65   4                      // 先清空显示位置
+  66   4                      LCD_ShowString(2, 8, "        ");
+  67   4                      Sleep(100);
+  68   4      
+  69   4                      if (CheckInputPassword())
+  70   4                      {
+  71   5                          LCD_ShowString(2, 8, "Correct!");
+  72   5                      }
+  73   4                      else
+  74   4                      {
+  75   5                          LCD_ShowString(2, 8, "Error!");
+  76   5                      }
+  77   4                  }
+  78   3              }
+  79   2      
+  80   2              ShowInputPassword();
+  81   2          }
+  82   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     82    ----
-   CONSTANT SIZE    =     24    ----
+   CODE SIZE        =    244    ----
+   CONSTANT SIZE    =     35    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----       4
+   DATA SIZE        =     14       1
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

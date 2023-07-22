@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MATRIX_KEY                                                        07/20/2023 21:05:15 PAGE 1   
+C51 COMPILER V9.60.7.0   MATRIX_KEY                                                        07/22/2023 16:58:17 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MATRIX_KEY
@@ -62,7 +62,7 @@ line level    source
   52          
   53          #define KEY_MATRIX_PORT P1 // 使用宏定义矩阵按键控制口
   54          uint8_t key_matrix_ranks_scan(void)
-C51 COMPILER V9.60.7.0   MATRIX_KEY                                                        07/20/2023 21:05:15 PAGE 2   
+C51 COMPILER V9.60.7.0   MATRIX_KEY                                                        07/22/2023 16:58:17 PAGE 2   
 
   55          {
   56   1          uint8_t key_value = 0;
@@ -126,7 +126,7 @@ line level    source
  114   3                  key_value = 3;
  115   3                  break;
  116   3              case 0xbd:
-C51 COMPILER V9.60.7.0   MATRIX_KEY                                                        07/20/2023 21:05:15 PAGE 3   
+C51 COMPILER V9.60.7.0   MATRIX_KEY                                                        07/22/2023 16:58:17 PAGE 3   
 
  117   3                  key_value = 7;
  118   3                  break;
@@ -170,7 +170,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    631    ----
+   CODE SIZE        =    773    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

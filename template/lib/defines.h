@@ -3,7 +3,9 @@
 
 #define BOOLEAN int
 #define TRUE 1
+#define true 1
 #define FALSE 0
+#define false 0
 #define BUTTON_DOWN 0
 #define BUTTON_UP 1
 

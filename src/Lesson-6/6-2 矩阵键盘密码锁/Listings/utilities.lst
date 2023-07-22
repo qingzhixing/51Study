@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   UTILITIES                                                         07/19/2023 17:40:40 PAGE 1   
+C51 COMPILER V9.60.7.0   UTILITIES                                                         07/22/2023 16:58:17 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE UTILITIES
@@ -62,7 +62,7 @@ line level    source
   51                                               0x75, 0x38, 0x37, 0x54, 0x5c, 0x73, 0x67, 0x31, 0x49, 0x78,
   52                                               0x3e, 0x1c, 0x7e, 0x64, 0x6e, 0x59};
   53          void NixieTubeAlphaDisplay(uint8_t location, uint8_t alpha)
-C51 COMPILER V9.60.7.0   UTILITIES                                                         07/19/2023 17:40:40 PAGE 2   
+C51 COMPILER V9.60.7.0   UTILITIES                                                         07/22/2023 16:58:17 PAGE 2   
 
   54          {
   55   1          // LED消影
@@ -84,11 +84,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    100    ----
+   CODE SIZE        =    104    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     43       2
+   DATA SIZE        =     43       4
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
