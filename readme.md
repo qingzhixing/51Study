@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/cd8731d7-2366-4da2-8032-5bb5ad0d3122/project/f9b51ce6-6867-4f4e-815a-aab32e23cdcf.svg)](https://wakatime.com/badge/user/cd8731d7-2366-4da2-8032-5bb5ad0d3122/project/f9b51ce6-6867-4f4e-815a-aab32e23cdcf)
+
 # 51 Study
 
 一个学习51单片机时创建的项目
