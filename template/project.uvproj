@@ -421,6 +421,51 @@
               <FileType>5</FileType>
               <FilePath>.\lib\matrix_key.h</FilePath>
             </File>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\init.c</FilePath>
+            </File>
+            <File>
+              <FileName>init.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\init.h</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>individual_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\individual_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>individual_key.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\individual_key.h</FilePath>
+            </File>
+            <File>
+              <FileName>nixie.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\nixie.c</FilePath>
+            </File>
+            <File>
+              <FileName>nixie.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\nixie.h</FilePath>
+            </File>
+            <File>
+              <FileName>REGX52.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\REGX52.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

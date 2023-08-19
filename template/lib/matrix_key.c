@@ -1,6 +1,6 @@
 #include "matrix_key.h"
+#include "REGX52.H"
 #include "utilities.h"
-#include <REGX52.H>
 
 // 暴力扫描得到按键编号(1~16)
 // 返回0:按键未按下
@@ -8,14 +8,14 @@ uint8_t MatrixKey_Scan()
 {
     uint8_t keyId = 0;
 
-#define CheckButtonDown(ButtonRegisterId, Id) \
-    if (ButtonRegisterId == 0)                \
+#define CheckButtonDown(buttonRegisterId, id) \
+    if (buttonRegisterId == 0)                \
     {                                         \
         Sleep(20);                            \
-        while (ButtonRegisterId == 0)         \
+        while (buttonRegisterId == 0)         \
             ;                                 \
         Sleep(20);                            \
-        keyId = Id;                           \
+        keyId = id;                           \
     }
 
     P1 = 0xFF;
