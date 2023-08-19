@@ -4,6 +4,10 @@
         "utilities.h": "c",
         "random": "c",
         "matrix_key.h": "c",
-        "defines.h": "c"
+        "defines.h": "c",
+        "lcd1602.h": "c",
+        "timer.h": "c",
+        "type_traits": "c",
+        "init.h": "c"
     }
 }

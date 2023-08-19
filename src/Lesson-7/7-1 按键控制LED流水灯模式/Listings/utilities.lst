@@ -1,0 +1,105 @@
+C51 COMPILER V9.60.7.0   UTILITIES                                                         08/19/2023 22:14:58 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE UTILITIES
+OBJECT MODULE PLACED IN .\Objects\utilities.obj
+COMPILER INVOKED BY: C:\Program Files\Keil_v5\C51\BIN\C51.EXE lib\utilities.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEN
+                    -D PRINT(.\Listings\utilities.lst) OBJECT(.\Objects\utilities.obj)
+
+line level    source
+
+   1          #include "utilities.h"
+   2          #include "defines.h"
+   3          
+   4          void Sleep(uint32_t msTime)
+   5          {
+   6   1          while (msTime--)
+   7   1          {
+   8   2              Delay1ms();
+   9   2          }
+  10   1      }
+  11          void Delay1ms() //@12.000MHz
+  12          {
+  13   1          unsigned char i, j;
+  14   1      
+  15   1          i = 2;
+  16   1          j = 239;
+  17   1          do
+  18   1          {
+  19   2              while (--j)
+  20   2                  ;
+  21   2          } while (--i);
+  22   1      }
+  23          
+  24          /*
+  25              数码管显示数字
+  26              location:从左到右8个LED编号0~7
+  27              number:0x0~0xF
+  28          */
+  29          static uint8_t numberToNixieSign[] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x
+             -7C, 0x39, 0x5E, 0x79, 0x71, 0x00};
+  30          void NixieTubeNumberDisplay(uint8_t location, uint8_t number)
+  31          {
+  32   1          // LED消影
+  33   1          Delay1ms();
+  34   1          P0 = 0x00;
+  35   1      
+  36   1          // 反转LED位置，使左边第一个LED从原来的LED8变成LED7
+  37   1          location = 7 - location;
+  38   1      
+  39   1          P2_2 = location & 1;
+  40   1          P2_3 = location & 1 << 1;
+  41   1          P2_4 = location & 1 << 2;
+  42   1      
+  43   1          P0 = numberToNixieSign[number];
+  44   1      }
+  45          /*
+  46              数码管显示字母
+  47              location:从左到右8个LED编号0~7
+  48              alpha:'a'~'z'共26个字母
+  49          */
+  50          
+  51          static uint8_t alphaToNixieSign[] = {0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71, 0x3d, 0x76, 0x0f, 0x0e,
+  52                                               0x75, 0x38, 0x37, 0x54, 0x5c, 0x73, 0x67, 0x31, 0x49, 0x78,
+  53                                               0x3e, 0x1c, 0x7e, 0x64, 0x6e, 0x59};
+C51 COMPILER V9.60.7.0   UTILITIES                                                         08/19/2023 22:14:58 PAGE 2   
+
+  54          void NixieTubeAlphaDisplay(uint8_t location, uint8_t alpha)
+  55          {
+  56   1          // LED消影
+  57   1          Delay1ms();
+  58   1          P0 = 0x00;
+  59   1      
+  60   1          // 反转LED位置，使左边第一个LED从原来的LED8变成LED7
+  61   1          location = 7 - location;
+  62   1      
+  63   1          P2_2 = location & 1;
+  64   1          P2_3 = location & 1 << 1;
+  65   1          P2_4 = location & 1 << 2;
+  66   1      
+  67   1          // alpha to id
+  68   1          alpha = alpha - 'a' + 0;
+  69   1      
+  70   1          P0 = alphaToNixieSign[alpha];
+  71   1      }
+  72          
+  73          void Panic()
+  74          {
+  75   1          while (TRUE)
+  76   1          {
+  77   2          }
+  78   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    106    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     43       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
