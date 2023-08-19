@@ -1,0 +1,49 @@
+C51 COMPILER V9.60.7.0   INDIVIDUAL_KEY                                                    08/20/2023 02:27:46 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE INDIVIDUAL_KEY
+OBJECT MODULE PLACED IN .\Objects\individual_key.obj
+COMPILER INVOKED BY: C:\Program Files\Keil_v5\C51\BIN\C51.EXE lib\individual_key.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECT
+                    -EXTEND PRINT(.\Listings\individual_key.lst) OBJECT(.\Objects\individual_key.obj)
+
+line level    source
+
+   1          #include "individual_key.h"
+   2          #include "REGX52.H"
+   3          #include "utilities.h"
+   4          
+   5          // 返回按下的独立按键编号,没按下返回-1
+   6          int8_t IndividualKey_Scan(void)
+   7          {
+   8   1          int8_t keyDown = -1;
+   9   1      #define CheckButtonDown(buttonRegisterId, keyId) \
+  10   1          if (buttonRegisterId == 0)                   \
+  11   1          {                                            \
+  12   1              Sleep(20);                               \
+  13   1              while (buttonRegisterId == 0)            \
+  14   1                  ;                                    \
+  15   1              Sleep(20);                               \
+  16   1              keyDown = keyId;                         \
+  17   1          }
+  18   1      
+  19   1          CheckButtonDown(P3_0, 0);
+  20   1          CheckButtonDown(P3_1, 1);
+  21   1          CheckButtonDown(P3_2, 2);
+  22   1          CheckButtonDown(P3_3, 3);
+  23   1      
+  24   1          return keyDown;
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    130    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

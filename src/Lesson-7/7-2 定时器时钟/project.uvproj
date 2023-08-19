@@ -456,16 +456,6 @@
               <FileType>5</FileType>
               <FilePath>.\lib\REGX52.h</FilePath>
             </File>
-            <File>
-              <FileName>main.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\main.h</FilePath>
-            </File>
-            <File>
-              <FileName>LED.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\LED.h</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>
