@@ -1,39 +1,63 @@
-#include "lib/LCD1602.h"
-#include "lib/defines.h"
-#include "lib/individual_key.h"
-#include "lib/init.h"
-#include "lib/timer.h"
-#include "lib/utilities.h"
+#include "main.h"
 
-void Time0RoutineHandler(void);
+int8_t keyDown;
+enum LEDMode LEDMoveMode = FORWARD;
 
 void main()
 {
-    InitAll();
+    Timer0Init();
 
     while (TRUE)
     {
-        // your codes are here
-        int8_t keyDown = IndividualKey_Scan();
-        if (keyDown != -1)
+        keyDown = IndividualKey_Scan();
+        if (keyDown == -1)
+            continue;
+        switch (keyDown)
         {
-            LCD_ShowSignedNum(1, 1, keyDown, 2);
+        case BUTTON_RIGHT:
+            LEDMoveMode = FORWARD;
+            break;
+        case BUTTON_LEFT:
+            LEDMoveMode = BACKWARD;
+            break;
+        default:
+            break;
         }
     }
 }
 
-// 定时器0产生中断的中断处理函数
-void Time0RoutineHandler() interrupt 1
+void Timer0_ISR() interrupt 1
 {
+    static uint16_t T0Counter = 0;
+    static int8_t LEDLightId = 0;
 
-    static uint16_t counter = 0;
-    static uint8_t seconds = 0;
     InitTimer0Counter();
-    counter++;
-    if (counter >= 1000)
+
+    T0Counter++;
+    if (T0Counter >= LED_MOVE_INTERVAL_MS)
     {
-        counter = 0;
-        seconds++;
-        // LCD_ShowNum(2, 1, seconds, 4);
+        T0Counter = 0;
+        switch (LEDMoveMode)
+        {
+        case FORWARD:
+            LED_OFF(LEDLightId);
+            LEDLightId++;
+            if (LEDLightId >= LED_NUM)
+            {
+                LEDLightId = 0;
+            }
+            LED_ON(LEDLightId);
+            break;
+
+        case BACKWARD:
+            LED_OFF(LEDLightId);
+            LEDLightId--;
+            if (LEDLightId < 0)
+            {
+                LEDLightId = LED_NUM - 1;
+            }
+            LED_ON(LEDLightId);
+            break;
+        }
     }
 }

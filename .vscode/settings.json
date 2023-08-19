@@ -9,6 +9,7 @@
         "timer.h": "c",
         "type_traits": "c",
         "init.h": "c",
-        "individual_key.h": "c"
+        "individual_key.h": "c",
+        "stdint.h": "c"
     }
 }

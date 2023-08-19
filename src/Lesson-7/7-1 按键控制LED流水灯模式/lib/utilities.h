@@ -9,4 +9,7 @@ void NixieTubeNumberDisplay(uint8_t, uint8_t);
 void NixieTubeAlphaDisplay(uint8_t, uint8_t);
 void Panic();
 
+#define SET_DIGIT_1(var, digit) (var |= (1 << digit))
+#define SET_DIGIT_0(var, digit) (var &= ~(1 << digit))
+
 #endif /* __LIB_UTILITIES_H */
