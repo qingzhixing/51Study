@@ -10,7 +10,7 @@
 #define LOW_8_BIT(value) (value & 0xFF)
 #define HIGH_8_BIT(value) (value >> 8)
 
-void Time0Init(void);
+void Timer0Init(void);
 void InitTimer0Counter(void);
 
 #endif /* __LIB_TIMER_H */

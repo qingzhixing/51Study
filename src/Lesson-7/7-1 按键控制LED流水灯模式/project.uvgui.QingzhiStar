@@ -6,7 +6,7 @@
   <Header>### uVision Project, (C) Keil Software</Header>
 
   <PrjGuiSettings>
-    <LastAddFilePath>D:\Document\Project\KeilProject\51Study\src\Lesson-7\7-1 按键控制LED流水灯模式\lib</LastAddFilePath>
+    <LastAddFilePath>D:\Document\Project\KeilProject\51Study\src\Lesson-7\7-1 按键控制LED流水灯模式</LastAddFilePath>
   </PrjGuiSettings>
 
   <ViewPool/>
@@ -1866,7 +1866,7 @@
       <Doc>
         <Name>.\main.c</Name>
         <ColumnNumber>1</ColumnNumber>
-        <TopLine>7</TopLine>
+        <TopLine>31</TopLine>
         <CurrentLine>18</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>

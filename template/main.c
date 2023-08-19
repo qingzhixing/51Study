@@ -1,12 +1,15 @@
-#include "lib/defines.h"
-#include "lib/init.h"
+#include "main.h"
 
 void main()
 {
-    InitAll();
-
+    Timer0Init();
     while (TRUE)
     {
-        // your codes are here
+        // your codes here
     }
+}
+
+void Timer0_ISR() interrupt 1
+{
+    InitTimer0Counter();
 }
