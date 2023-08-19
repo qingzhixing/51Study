@@ -8,6 +8,7 @@
         "lcd1602.h": "c",
         "timer.h": "c",
         "type_traits": "c",
-        "init.h": "c"
+        "init.h": "c",
+        "individual_key.h": "c"
     }
 }
