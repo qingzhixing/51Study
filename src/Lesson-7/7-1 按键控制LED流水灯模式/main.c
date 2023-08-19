@@ -9,6 +9,7 @@ void Time0RoutineHandler(void);
 void main()
 {
     InitAll();
+	
     while (TRUE)
     {
         // your codes are here

@@ -1,7 +1,7 @@
 #ifndef __LIB_UTILITIES_H
 #define __LIB_UTILITIES_H
+#include "REGX52.H"
 #include "stdint.h"
-#include <REGX52.h>
 
 void Delay1ms();
 void Sleep(uint32_t);
