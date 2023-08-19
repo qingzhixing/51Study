@@ -5,8 +5,6 @@
 #include "lib/utilities.h"
 
 void Time0RoutineHandler(void);
-uint16_t counter = 0;
-uint8_t seconds = 0;
 
 void main()
 {
@@ -20,6 +18,9 @@ void main()
 // 定时器0产生中断的中断处理函数
 void Time0RoutineHandler() interrupt 1
 {
+	
+	static uint16_t counter = 0;
+	static uint8_t seconds = 0;
     InitTimer0Counter();
     counter++;
     if (counter >= 1000)

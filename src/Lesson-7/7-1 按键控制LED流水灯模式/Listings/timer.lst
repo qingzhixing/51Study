@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   TIMER                                                             08/19/2023 23:43:56 PAGE 1   
+C51 COMPILER V9.60.7.0   TIMER                                                             08/20/2023 00:42:29 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TIMER
@@ -28,8 +28,8 @@ line level    source
   18   1              C/T位(第2位):       0 - 定时器模式，计数器溢出时产生中断
   19   1              Gate位(第3位):      0 - 用内部信号激活定时器
   20   1          */
-  21   1          TMOD = 0x01; // 0b0000_0001
-  22   1          TF0 = 0;     // 初始化进位标志，当定时器溢出时该位为1,向CPU发出中断
+  21   1          TMOD |= 0xf1; // 后4位置 0b0001
+  22   1          TF0 = 0;      // 初始化进位标志，当定时器溢出时该位为1,向CPU发出中断
   23   1      
   24   1          InitTimer0Counter();
   25   1      
