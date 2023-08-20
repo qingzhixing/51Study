@@ -14,6 +14,7 @@ void main()
     Initialize();
 
     LCD_ShowString(1, 1, "Clock:");
+    ON_INTERRUPT();
 
     while (TRUE)
     {
