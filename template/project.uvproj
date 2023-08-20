@@ -457,14 +457,9 @@
               <FilePath>.\lib\REGX52.h</FilePath>
             </File>
             <File>
-              <FileName>main.h</FileName>
+              <FileName>interrupt.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\main.h</FilePath>
-            </File>
-            <File>
-              <FileName>LED.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\LED.h</FilePath>
+              <FilePath>.\lib\interrupt.h</FilePath>
             </File>
           </Files>
         </Group>

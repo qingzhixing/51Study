@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   TIMER                                                             08/20/2023 02:28:28 PAGE 1   
+C51 COMPILER V9.60.7.0   TIMER                                                             08/20/2023 03:13:10 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TIMER
@@ -37,13 +37,12 @@ line level    source
   27   1      
   28   1          // 配置TF0信号路径
   29   1          ET0 = 1; // 允许Timer0产生中断
-  30   1          EA = 1;  // 打开全局中断开关
-  31   1          PT0 = 0; // Timer0 产生 低级 中断
-  32   1      }
+  30   1          PT0 = 0; // Timer0 产生 低级 中断
+  31   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     24    ----
+   CODE SIZE        =     22    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
