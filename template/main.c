@@ -1,8 +1,13 @@
 #include "main.h"
 
-void main()
+static void Initialize()
 {
     Timer0Init();
+}
+
+void main()
+{
+    Initialize();
     while (TRUE)
     {
         // your codes here

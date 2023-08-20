@@ -10,6 +10,7 @@
         "type_traits": "c",
         "init.h": "c",
         "individual_key.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "main.h": "c"
     }
 }

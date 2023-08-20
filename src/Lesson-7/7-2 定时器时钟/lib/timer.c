@@ -27,6 +27,5 @@ void Timer0Init()
 
     // 配置TF0信号路径
     ET0 = 1; // 允许Timer0产生中断
-    EA = 1;  // 打开全局中断开关
     PT0 = 0; // Timer0 产生 低级 中断
 }

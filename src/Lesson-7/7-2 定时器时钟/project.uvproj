@@ -456,6 +456,11 @@
               <FileType>5</FileType>
               <FilePath>.\lib\REGX52.h</FilePath>
             </File>
+            <File>
+              <FileName>interrupt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\interrupt.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
