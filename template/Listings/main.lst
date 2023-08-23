@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              08/20/2023 17:04:13 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              08/24/2023 05:18:02 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -10,67 +10,51 @@ line level    source
 
    1          #include "main.h"
    2          
-   3          static uint16_t T0Counter = 0;
-   4          static uint8_t hour = 0, minute = 0, second = 0;
-   5          
-   6          static void Initialize()
-   7          {
-   8   1          LCD_Init();
-   9   1          Timer0Init();
-  10   1      }
-  11          
-  12          void main()
-  13          {
-  14   1          Initialize();
-  15   1      
-  16   1          OFF_INTERRUPT();
-  17   1          LCD_ShowString(1, 1, "Clock:");
-  18   1          ON_INTERRUPT();
-  19   1      
+   3          static void Initialize()
+   4          {
+   5   1          Timer0Init();
+   6   1          LCD_Init();
+   7   1          UART_Init();
+   8   1      }
+   9          
+  10          uint16_t msCounter = 0;
+  11          uint8_t second = 0;
+  12          
+  13          void main()
+  14          {
+  15   1          Initialize();
+  16   1          UART_SendByte(0x55);
+  17   1          UART_SendByte(0xaa);
+  18   1          LCD_ShowString(1, 1, "Seconds:");
+  19   1          ON_INTERRUPT();
   20   1          while (TRUE)
   21   1          {
-  22   2      
-  23   2              LCD_ShowNum(2, 1, hour, 2);
-  24   2              LCD_ShowChar(2, 3, ':');
-  25   2              LCD_ShowNum(2, 4, minute, 2);
-  26   2              LCD_ShowChar(2, 6, ':');
-  27   2              LCD_ShowNum(2, 7, second, 2);
-  28   2          }
-  29   1      }
-  30          void Timer0_ISR() interrupt 1
-  31          {
-  32   1          InitTimer0Counter();
-  33   1          T0Counter++;
-  34   1          if (T0Counter >= 1000)
-  35   1          {
-  36   2              T0Counter = 0;
-  37   2              second++;
-  38   2              if (second >= 60)
-  39   2              {
-  40   3                  second = 0;
-  41   3                  minute++;
-  42   3              }
-  43   2              if (minute >= 60)
-  44   2              {
-  45   3                  minute = 0;
-  46   3                  hour++;
-  47   3              }
-  48   2              if (hour >= 100)
-  49   2              {
-  50   3                  hour = 0;
-  51   3              }
-  52   2          }
-  53   1      }
-
-C51 COMPILER V9.60.7.0   MAIN                                                              08/20/2023 17:04:13 PAGE 2   
+  22   2              // your codes here
+  23   2              LCD_ShowHexNum(2, 1, second, 2);
+  24   2          }
+  25   1      }
+  26          
+  27          void Timer0_ISR() interrupt 1
+  28          {
+  29   1          InitTimer0Counter();
+  30   1          // Timer0_ISR codes here
+  31   1      
+  32   1          msCounter++;
+  33   1          if (msCounter >= 1000)
+  34   1          {
+  35   2              msCounter = 0;
+  36   2              second++;
+  37   2              UART_SendByte(second);
+  38   2          }
+  39   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    208    ----
-   CONSTANT SIZE    =      7    ----
+   CODE SIZE        =    143    ----
+   CONSTANT SIZE    =      9    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      5    ----
+   DATA SIZE        =      3    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

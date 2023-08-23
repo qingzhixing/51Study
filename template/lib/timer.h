@@ -12,5 +12,6 @@
 
 void Timer0Init(void);
 void InitTimer0Counter(void);
+void Timer1Init(void);
 
 #endif /* __LIB_TIMER_H */

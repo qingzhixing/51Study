@@ -461,6 +461,21 @@
               <FileType>5</FileType>
               <FilePath>.\lib\interrupt.h</FilePath>
             </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\UART.h</FilePath>
+            </File>
+            <File>
+              <FileName>51++.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lib\51++.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
