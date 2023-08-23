@@ -1,5 +1,6 @@
 #include "nixie.h"
 #include "utilities.h"
+#include "REGX52.h"
 
 /*
     数码管显示数字
