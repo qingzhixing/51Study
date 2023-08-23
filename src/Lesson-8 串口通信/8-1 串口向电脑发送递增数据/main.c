@@ -3,6 +3,8 @@
 static void Initialize()
 {
     Timer0Init();
+    LCD_Init();
+    UART_Init();
 }
 
 void main()
@@ -12,6 +14,8 @@ void main()
     while (TRUE)
     {
         // your codes here
+        UART_SendByte(0x11);
+        Sleep(100);
     }
 }
 void Timer0_ISR() interrupt 1

@@ -1,0 +1,70 @@
+C51 COMPILER V9.60.7.0   UART                                                              08/24/2023 04:42:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE UART
+OBJECT MODULE PLACED IN .\Objects\UART.obj
+COMPILER INVOKED BY: C:\Program Files\Keil_v5\C51\BIN\C51.EXE lib\UART.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRI
+                    -NT(.\Listings\UART.lst) OBJECT(.\Objects\UART.obj)
+
+line level    source
+
+   1          #include "UART.h"
+   2          #include "REGX52.h"
+   3          #include "timer.h"
+   4          /*
+   5              UART初始化 - 工作模式1: 8位UART,波特率可变
+   6          */
+   7          void UART_Init(void)
+   8          {
+   9   1          Timer1Init(); // 利用定时器1作为波特率发生器
+  10   1      
+  11   1          /*
+  12   1              串行控制寄存器SCON = 0b_0100_0000 = 0x40
+  13   1              高位到低位:
+  14   1              SM0~1: 01 - 工作模式1: 8位UART,波特率可变(为T1溢出率)
+  15   1              SM2: 控制工作模式2,3多机通信,这里不用管
+  16   1              REN: 1 - 打开串行接收
+  17   1              TB8,RB8: 管理方式2,3 第九位数据，这里不管
+  18   1              TI,RI: 标志位，清空
+  19   1          */
+  20   1          SCON = 0x50;
+  21   1      
+  22   1          /*
+  23   1              波特率选择特殊功能寄存器PCON,设置高2位为0b00.
+  24   1              剩余位与电源控制位共用一个寄存器
+  25   1              高2位从高到底:
+  26   1              SMOD波特率选择位: 0 - 除以二, 1 - 不除以二,即给1加倍, 加倍可以降低误差,�
+             -�里不加倍
+  27   1              SMOD0帧错误检测位:    0 - SCON的SM0 和 SM1一起指定工作模式
+  28   1                                  1 - SCON的SM0用于帧错误检测功能
+  29   1          */
+  30   1          // 设置高2位为0b00
+  31   1          PCON &= 0x3F;
+  32   1          PCON |= 0x00; // 0b0000_0000
+  33   1      }
+  34          
+  35          void UART_SendByte(uint8_t byte)
+  36          {
+  37   1          SBUF = byte;
+  38   1          // 检测是否完成(TI = 1)
+  39   1          while (TI != 1)
+  40   1          {
+  41   2          }
+  42   1          TI = 0;
+  43   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     18    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.60.7.0   UART                                                              08/24/2023 04:42:22 PAGE 2   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
